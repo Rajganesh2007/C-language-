@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    int i, gcd = 1;
+    int smallestCommonDivisor = -1;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Find GCD
+    for (i = 1; i <= num1 && i <= num2; i++) {
+        if (num1 % i == 0 && num2 % i == 0) {
+            gcd = i;
+        }
+    }
+
+    // Find smallest common divisor (other than 1)
+    for (i = 2; i <= num1 && i <= num2; i++) {
+        if (num1 % i == 0 && num2 % i == 0) {
+            smallestCommonDivisor = i;
+            break;  // stop at first (smallest)
+        }
+    }
+
+    // Output
+    if (smallestCommonDivisor != -1)
+        printf("Smallest Common Divisor (other than 1): %d\n", smallestCommonDivisor);
+    else
+        printf("No common divisor other than 1\n");
+
+    printf("GCD = %d\n", gcd);
+
+    return 0;
+}
