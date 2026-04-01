@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h> 
+
+int main() {
+   
+    srand(time(NULL));
+
+    printf("Pseudo-random numbers:\n");
+
+    
+    for (int i = 0; i < 3; i++) {
+        int random_num = rand();
+        printf("Number %d: %d\n", i + 1, random_num);
+    }
+
+    return 0;
+}
